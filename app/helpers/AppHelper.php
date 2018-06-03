@@ -12,6 +12,7 @@ class AppHelper
         $path = base_path() . '/app/views/layouts/footer.blade.php';
         $contents = file_get_contents($path);
         $c_sha1 = sha1($contents);
+        // dd($c_sha1);
         return substr($c_sha1, 0, 7);
     }
 

@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => true,
-		'url' => 'http://l4.school.test',
+	'debug' => false,
+		'url' => 'http://localhost',
 
 );

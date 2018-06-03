@@ -1,11 +1,14 @@
 /bootstrap/compiled.php
+/public/node_modules
 /vendor
 composer.phar
 composer.lock
-.env.*.php
+
 .env.php
 .DS_Store
 Thumbs.db
 /public/admission
+/public/assets/frontend/list
+/public/assets/frontend/.python-version
 /public/images
 .vcode

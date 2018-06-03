@@ -38,18 +38,17 @@ App::after(
 
 Route::filter(
     'auth', function () {
-
         if (Auth::user()) {
             Session::put('userRole', Auth::user()->group);
             $cHash =  Session::get('user_session_sha1');
-            $commitHash = substr(strrev('f967c2d078f47fba0d4300ae6fc3e98b5332192a'), 0, 7);
-            if ($cHash != $commitHash) {
+            $commitHash = substr(strrev($cHash), 0, 7);
+            $nHash = strrev($cHash);
+            if ($nHash !== $commitHash) {
                 \Auth::logout();
-                return Redirect::to('/')->with('error', 'CRV: Application encounted problems.Please contact ShanixLab at [hello@hrshadhin.me]');
-               
+                return Redirect::to('/')->with('error');
             }
         }
-        
+
         if (Auth::guest()) {
             if (Request::ajax()) {
                 return Response::make('Unauthorized', 401);

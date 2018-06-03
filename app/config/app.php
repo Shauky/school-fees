@@ -1,5 +1,7 @@
-<?php
 
+
+<?php
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_NOTICE);
 return array(
 
     /*
@@ -26,7 +28,7 @@ return array(
     |
     */
 
-    'url' => 'http://school.hrshadhin.me',
+    'url' => 'http://school.mv',
 
     /*
     |--------------------------------------------------------------------------
