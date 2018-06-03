@@ -23,8 +23,6 @@
 
     <!-- The styles -->
     <link id="bs-css" href="<?php echo url(); ?>/css/bootstrap-cerulean.min.css" rel="stylesheet">
-
-    <link href="<?php echo url(); ?>/css/charisma-app.css" rel="stylesheet">
     <link href='<?php echo url(); ?>/bower_components/fullcalendar/dist/fullcalendar.css' rel='stylesheet'>
     <link href='<?php echo url(); ?>/bower_components/fullcalendar/dist/fullcalendar.print.css' rel='stylesheet' media='print'>
     <link href='<?php echo url(); ?>/bower_components/chosen/chosen.min.css' rel='stylesheet'>
@@ -411,9 +409,6 @@
 <!-- multiple file upload plugin -->
 
 <script src="<?php echo url(); ?>/js/jquery.history.js"></script>
-<!-- application script for Charisma demo -->
-<script src="<?php echo url(); ?>/js/charisma.js"></script>
-
 @yield('script')
 </body>
 </html>

@@ -11,4 +11,4 @@
 |
 */
 Artisan::add(new SeedTeacherAttendance);
-
+Artisan::add(new BuildDev);

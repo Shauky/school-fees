@@ -1,5 +1,4 @@
 <?php
- // namespace App\Commands;
 
  use Exception as Exception;
  use Illuminate\Console\Command;
@@ -44,7 +43,7 @@
 
       public function fire()
       {
-        chdir(base_path('public' . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR . 'frontend'));
+        chdir(resrouce_path('assets' . DIRECTORY_SEPARATOR . 'frontend'));
         $this->info('Building frontend');
         $process = new Process('npm run build');
         $process->setTimeout(null);
@@ -70,7 +69,7 @@
 
       foreach($res as $entry) {
         // get resource path and link entries
-        $target = base_path('public'. DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR . $entry );
+        $target = resource_path('assets'. DIRECTORY_SEPARATOR . $entry );
         $link = public_path($entry);
         $this->info('Creating symlink. Target: ' . $target . 'Link: ' . $link);
         if(file_exists($target) && !file_exists($link)) {
@@ -88,7 +87,7 @@
           }
         }
 
-        $index = file_get_contents(base_path('public' . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR .'index.html'));
+        $index = file_get_contents(resource_path('assets' . DIRECTORY_SEPARATOR .'index.html'));
         $index = str_replace('<meta charset="utf-8">',
         '
           <meta charset="utf-8">
@@ -113,27 +112,27 @@
         file_put_contents($appBladePath, $index);
       }
 
-      // /**
-    	//  * Get the console command arguments.
-    	//  *
-    	//  * @return array
-    	//  */
-    	// protected function getArguments()
-    	// {
-    	// 	return array(
-    	// 		array('example', InputArgument::REQUIRED, 'An example argument.'),
-    	// 	);
-    	// }
-      //
-    	// /**
-    	//  * Get the console command options.
-    	//  *
-    	//  * @return array
-    	//  */
-    	// protected function getOptions()
-    	// {
-    	// 	return array(
-    	// 		array('example', null, InputOption::VALUE_OPTIONAL, 'An example option.', null),
-    	// 	);
-    	// }
+      /**
+    	 * Get the console command arguments.
+    	 *
+    	 * @return array
+    	 */
+    	protected function getArguments()
+    	{
+    		return array(
+    			array('example', InputArgument::REQUIRED, 'An example argument.'),
+    		);
+    	}
+
+    	/**
+    	 * Get the console command options.
+    	 *
+    	 * @return array
+    	 */
+    	protected function getOptions()
+    	{
+    		return array(
+    			array('example', null, InputOption::VALUE_OPTIONAL, 'An example option.', null),
+    		);
+    	}
  }
